@@ -17,7 +17,7 @@ meower <- function(humanish) {
     n <- (lengths(gregexpr("\\W+", humanish)) + 1) * 2
     moews <- c("me", "meow", "MEOW!!", ";-)", "mEoW", "meooow", "meee",
                "OWW!", "MeeeOwOw", rep(" ", 10), rep(",", 2), rep(".", 2))
-    paste(sample(moews, 6), collapse = "")
+    paste(sample(moews, n), collapse = "")
   }
 
 }
