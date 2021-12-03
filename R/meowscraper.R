@@ -37,3 +37,7 @@ randomCat <- function(){
 }
 
 
+show_randomCat <- function() {
+  pic <- magick::image_read(randomCat())
+  print(pic)
+}
