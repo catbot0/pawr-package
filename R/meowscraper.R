@@ -2,11 +2,11 @@
 #'
 #' Returns the URL of a randomly selected cat image from Wikimedia.org
 #'
-#' @usage randomCat()
+#' @usage show_randomCat()
 #'
 #' @param NA None yet
 #'
-#' @examples randomCat()
+#' @examples show_randomCat()
 #'
 #' @export
 
