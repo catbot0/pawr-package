@@ -16,3 +16,18 @@
 hello <- function() {
   print("Meow!")
 }
+
+
+meow_world <- function(kitties = 7){
+  for (i in 1:kitties) {
+    print("Meow!")
+    cat("
+      /\\_/\\
+     ( o.o )
+      > ^ <
+     ")
+
+    Sys.sleep(0.5)
+  }
+}
+
