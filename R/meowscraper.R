@@ -14,6 +14,12 @@
 
 randomCat <- function(){
 
+  attr = list()
+
+  i = tentative = 1
+
+  URL <- "https://commons.wikimedia.org/w/index.php?search=cat&title=Special:MediaSearch&go=Go&type=image"
+
   packages <- c("remotes", "netstat", "reader")
 
   ## Load or install&load all
@@ -33,57 +39,64 @@ randomCat <- function(){
   #start RSelenium
   rD <- RSelenium::rsDriver(
     browser = "chrome",
-    port = netstat::free_port())
+    port = netstat::free_port(),
+    verbose = F)
   remDr <- rD[["client"]]
 
   #navigate to page
   remDr$navigate(
-    "https://commons.wikimedia.org/w/index.php?search=cat&title=Special:MediaSearch&go=Go&type=image"
+    URL
   )
 
   #specific to commons.wikimedia.org
-  #in order to load additional images, it first requires to scroll down twice,
-  #and then to click on "Load more"
-  # for(action in c("scroll", "load more")){
-  #   #scroll down 2 times, waiting for the page to load at each time
-  #   for(i in 1:2){
-  #     remDr$executeScript(paste("scroll(0,",i*10000,");"))
-  #     Sys.sleep(3)
-  #   }
-  #
-  #
-  #   RSelenium::remoteDriverr$findElement(
-  #     By.xpath("//button[sd-button__content()='Load more']")).click();
-  #
-  # }
-  #
-  #
-  # pageBody <- RSelenium::remDr$findElement("css","body")
+  #in order to load additional images, it looks for the "Load more" button and then clicks on it
+   while(tentative <= 10){
+
+     # click on "Load more" button
+       loadMoreButton <- remDr$findElement(
+         using = "xpath", value = "//*[@id='sd-tab-image']/div[2]/div/div/button/span"
+           )
+       loadMoreButton$clickElement()
+       Sys.sleep(3)
+
+     tentative <- tentative + 1
+   }
 
 
-  # #get the page html
-  # page <- remDr$getPageSource()[[1]]
-  #
-  # #parse it
-  # node <- rvest::html_nodes(
-  #   page,xpath = '//img'
-  #   )
-  #
-  # range <- 1:length(node)
-  #
-  # index <- sample(range, 1)
-  #
-  # attr <- node[index][1]
-  #
-  # string <- as.character(attr)
-  #
-  # start <- ".*src=\\\""
-  #
-  # stop <- "\" data-src.*"
-  #
-  # link = gsub(start, "", gsub(stop, "", string))
-  #
-  # return(link)
+   pageBody <- remDr$findElement("css","body")
+
+
+   #get the page html
+   page <- rvest::read_html(URL)
+
+   #parse it
+   images <- remDr$findElements(
+     using = "css selector", value = "img"
+   )
+
+   src <- lapply(images,
+                 function(x)
+                   x$getElementAttribute("src"))
+
+   range <- 1:length(src)
+
+
+   while(length(attr) == 0){
+
+     index <- sample(range, 1)
+
+     attr <- src[[index]]
+   }
+
+   string <- as.character(attr)
+
+   start <- ".*src=\\\""
+
+   stop <- "\" data-src.*"
+
+   link = gsub(start, "", gsub(stop, "", string))
+
+   return(link)
 
   remDr$close()
   rD$server$stop()
