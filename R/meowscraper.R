@@ -6,6 +6,8 @@
 #'
 #' @param NA None yet
 #'
+#' @importFrom rvest read_html html_nodes
+#'
 #' @examples show_randomCat()
 #'
 #' @export
