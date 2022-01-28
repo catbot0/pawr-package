@@ -37,11 +37,17 @@ randomCat <- function(){
 
 
   #start RSelenium
+
+  eCaps <- list(chromeOptions = list(
+    args = c('--headless', '--disable-gpu', '--window-size=1280,800')
+  ))
   rD <- RSelenium::rsDriver(
     browser = "chrome",
     port = netstat::free_port(),
-    verbose = F)
+    verbose = F,
+    extraCapabilities = eCaps)
   remDr <- rD[["client"]]
+
 
   #navigate to page
   remDr$navigate(
