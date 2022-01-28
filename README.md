@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# pawr-package
-=======
-# pawr-package
-This is a package that randomly generates funny cat images.
->>>>>>> 71a8614f8483ffa1e27ce8eaa1328c89c010eb53
+# pawr Package
+A package that let's you communicate in cat language and creates random cat images.
+
