@@ -20,7 +20,7 @@ randomCat <- function(){
 
   URL <- "https://commons.wikimedia.org/w/index.php?search=cat&title=Special:MediaSearch&go=Go&type=image"
 
-  packages <- c("remotes", "netstat", "reader")
+  packages <- c("remotes", "netstat", "reader", "tuneR")
 
   ## Load or install&load all
   package.check <- lapply(
@@ -111,8 +111,14 @@ randomCat <- function(){
 
 }
 
+play_catSound <- function(){
+  file <- tuneR::readMP3("sources/cat_purr.mp3")
+  tuneR::play(file)
+}
+
 
 show_randomCat <- function() {
   pic <- magick::image_read(randomCat())
   print(pic)
+  play_catSound()
 }
