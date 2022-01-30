@@ -11,8 +11,11 @@
 #' @examples show_randomCat()
 #'
 #' @export
-#'
-#' Requires RSelenium, openssl
+show_randomCat <- function() {
+  pic <- magick::image_read(randomCat())
+  print(pic)
+  play_catSound()
+}
 
 randomCat <- function(){
 
@@ -116,11 +119,4 @@ randomCat <- function(){
 play_catSound <- function(){
   file <- tuneR::readMP3("sources/cat_purr.mp3")
   tuneR::play(file)
-}
-
-
-show_randomCat <- function() {
-  pic <- magick::image_read(randomCat())
-  print(pic)
-  play_catSound()
 }

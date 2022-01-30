@@ -11,20 +11,47 @@
 #' @export
 meower <- function(humanish) {
 
-  if (grepl("i like dog", humanish, ignore.case = T)) {
-    meow <- "MeOW?!!!???! MEOW!!1!1! MEOWMEOWWWWW MEOWWW!!!!!"
+  # If input is empty print reminder
+  if (missing(humanish)) {
+    out <- "Pleaser enter text in human language u wanna translate to meowish! For all cats trying to translate human language, we excuse the very simple and meaningless output. Humans are very simple creatures with their language being unable to express complex thoughts."
   } else {
-    n <- (lengths(gregexpr("\\W+", humanish)) + 1) * 2
-    moews <- c("me", "meow", "MEOW!!", ";-)", "mEoW", "meooow", "meee",
-               "OWW!", "MeeeOwOw", rep(" ", 10), rep(",", 2), rep(".", 2))
-    paste(sample(moews, n, replace = T), collapse = "")
+
+    # Meowish translator
+    if (grepl("i like dog", humanish, ignore.case = T)) {
+      out <- "MeOW?!!!???! MEOW!!1!1! MEOWMEOWWWWW MEOWWW!!!!!"
+    } else {
+      n <- (lengths(gregexpr("\\W+", humanish)) + 1) * 2
+      moews <- c("me", "meow", "MEOW!!", ";-)", "mEoW", "meooow", "meee",
+                 "OWW!", "MeeeOwOw", rep(" ", 10), rep(",", 2), rep(".", 2))
+      out <- paste(sample(moews, n, replace = T), collapse = "")
+    }
   }
+
+  # Print output
+  cat(out)
 
 }
 
+#' Centered Headline 0 for LaTeX
+#'
+#' Gives centered comments for LaTeX. Always capitalized.
+#'
+#' @usage humaner()
+#'
+#' @param willdonothing String for nothing
+#'
+#' @examples humaner("Meeeowww... Meowmeow?! Meowow.")
+#'
+#' @export
 humaner <- function(meowish) {
 
-    humans <- c("The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
+  # If input is empty print reminder
+  if (missing(meowish)) {
+    out <- "Pleaser enter text in cat language u wanna translate to simple humanish!"
+  } else {
+
+    # set of cat wisdoms
+    cat_wisdom <- c("The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself.",
                 "God does not play dice with the universe.",
                 "In fact, the mere act of opening the box will determine the state of the cat, although in this case there were three determinate states the cat could be in: these being Alive, Dead, and Bloody Furious.",
                 "As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.",
@@ -45,8 +72,14 @@ humaner <- function(meowish) {
                 "In the early days of atomic physics [before quantum field theory revealed the true meaning of the fine structure constant to be the strength of the coupling between the electron and photon], it was thought to have a value so close to being precisely 1/137 that numerologists started to establish cultish associations with the number 137.",
                 "The 114 chakras exhibits quantum coherence., through which the body maintains balance endocrine hormone secretion, circadian rhythms and optimal mind-body connections. The decoherence is associated with diseases.",
                 "I was floating, lost between the worlds. The familiar pull of dread took hold of me once again. Looming archetypal shadows lingered on the edge of my mind, crushing me beneath the sorrow."
-                )
-    sample(humans, 1)
+    )
+
+    # sample a cat wisdom
+    out <- sample(humans, 1)
+  }
+
+  # Print output
+  cat(out)
 
 }
 
