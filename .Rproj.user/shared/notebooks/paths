@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+C:/Users/berubec/OneDrive/ECTS/H4SS/pawr-package/DESCRIPTION="58913AC0"
+C:/Users/berubec/OneDrive/ECTS/H4SS/pawr-package/man/donotdisturb.Rd="47ED3DF6"
+=======
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/DESCRIPTION="B3E0F6B8"
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/LICENSE="48BE2F83"
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/NAMESPACE="12667A3A"
@@ -7,4 +11,8 @@ C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/R/translators.R="
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/R/ui.R="D5E4F770"
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/R/zzz.R="C858714E"
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/README.md="1487CCDD"
+<<<<<<< HEAD
 C:/Users/Nutzer/Documents/Z Additional R Projects/pawr-package/inst/shiny/app.R="17176E7E"
+=======
+>>>>>>> 2aa189d16dc7e1c21ea8115a26f3cc5f6b8099ec
+>>>>>>> baae1aab9bc4b1a8bb41bde8fcddf45bd6223f75
