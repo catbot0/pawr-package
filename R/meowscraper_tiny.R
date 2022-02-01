@@ -1,24 +1,6 @@
-#' Random cat image URL (faster)
+#' Random cat find image URL (faster)
 #'
-#' Returns the URL of a randomly selected cat image from Wikimedia.org
-#'
-#' @usage show_tinyCat()
-#'
-#' @param NA None yet
-#'
-#' @importFrom rvest read_html html_nodes
-#'
-#' @examples show_tinyCat()
-#'
-#' @export
-show_tinyCat <- function() {
-  img <- magick::image_read(find_tinyCat())
-  print(img)
-}
-
-#' Random cat image URL (faster)
-#'
-#' Returns the URL of a randomly selected cat image from Wikimedia.org
+#' Returns URL of a randomly selected cat image from Wikimedia.org
 #'
 #' @usage find_tinyCat()
 #'
@@ -37,4 +19,22 @@ find_tinyCat <- function() {
   img <- pg[sample(2:length(pg), 1)]
   img <- gsub('^[^"]*"\\s*|"[^"]*$',"", img)
   img
+}
+
+#' Random cat image URL (faster)
+#'
+#' Returns the URL of a randomly selected cat image from Wikimedia.org
+#'
+#' @usage show_tinyCat()
+#'
+#' @param NA None yet
+#'
+#' @importFrom rvest read_html html_nodes
+#'
+#' @examples show_tinyCat()
+#'
+#' @export
+show_tinyCat <- function() {
+  img <- magick::image_read(find_tinyCat())
+  print(img)
 }

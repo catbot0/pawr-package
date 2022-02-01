@@ -2,7 +2,7 @@
 % Please edit documentation in R/meowscraper_tiny.R
 \name{find_tinyCat}
 \alias{find_tinyCat}
-\title{Random cat image URL (faster)}
+\title{Random cat find image URL (faster)}
 \usage{
 find_tinyCat()
 }
@@ -10,7 +10,7 @@ find_tinyCat()
 \item{NA}{None yet}
 }
 \description{
-Returns the URL of a randomly selected cat image from Wikimedia.org
+Returns URL of a randomly selected cat image from Wikimedia.org
 }
 \examples{
 find_tinyCat()
