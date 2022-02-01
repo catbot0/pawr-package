@@ -2,9 +2,9 @@
 
 
 # PawR Package
-THE best R package on the interwebs! It helps you get fluent in cat language and produces random cats.
+THE best R package on the interwebs! It helps you to become fluent in cat language and produces random cats.
 
-Install:
+**Install:**
 ```{r}
 devtools::install_github("catbot0/pawr-package")
 ```
