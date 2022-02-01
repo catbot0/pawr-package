@@ -1,4 +1,5 @@
-![GitHub](https://img.shields.io/github/r-package/v/catbot0/pawr-package) ![GitHub](https://img.shields.io/github/license/catbot0/pawr-package)
+![GitHub](https://img.shields.io/github/r-package/v/catbot0/pawr-package)  ![GitHub](https://img.shields.io/github/license/catbot0/pawr-package)
+
 
 # PawR Package
 THE best R package on the interwebs! It helps you get fluent in cat language and produces random cats.
