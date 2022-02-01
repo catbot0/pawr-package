@@ -7,6 +7,7 @@
 #' @param NA None yet
 #'
 #' @importFrom rvest read_html html_nodes
+#' @importFrom magick image_read
 #'
 #' @examples show_randomCat()
 #'

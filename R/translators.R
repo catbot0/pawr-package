@@ -75,7 +75,7 @@ humaner <- function(meowish) {
     )
 
     # sample a cat wisdom
-    out <- sample(humans, 1)
+    out <- sample(cat_wisdom, 1)
   }
 
   # Print output
