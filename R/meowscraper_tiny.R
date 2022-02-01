@@ -16,6 +16,19 @@ show_tinyCat <- function() {
   print(img)
 }
 
+#' Random cat image URL (faster)
+#'
+#' Returns the URL of a randomly selected cat image from Wikimedia.org
+#'
+#' @usage find_tinyCat()
+#'
+#' @param NA None yet
+#'
+#' @importFrom rvest read_html html_nodes
+#'
+#' @examples find_tinyCat()
+#'
+#' @export
 find_tinyCat <- function() {
   # Read CC cat images from photos for class (max 26 pages)
   pg <- rvest::read_html(paste0("https://www.photosforclass.com/search/cat/",
